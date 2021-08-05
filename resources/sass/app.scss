@@ -1,0 +1,63 @@
+// Tailwind CSS
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.base-header {
+    @apply flex items-center justify-between xl:container xl:mx-auto;
+    padding: 20px 30px;
+    h1 {
+        font-size: 24px;
+        letter-spacing: 0.04em;
+        font-weight: 700;
+    }
+    > ul {
+        > li {
+            display: inline-block;
+            & + li {
+                margin-left: 14px;
+            }
+        }
+    }
+}
+
+.base-container {
+    background-color: gainsboro;
+}
+
+.text-input {
+    @apply bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500;
+}
+
+.form-table {
+    tr {
+        box-sizing: border-box;
+        th,
+        td {
+            padding: 10px;
+        }
+        th {
+            padding-right: 15px;
+            text-align: right;
+        }
+    }
+}
+
+.content {
+    margin-top: 30px;
+}
+
+.content-box {
+    @apply border border-gray-300;
+    .content-box__title {
+        @apply text-gray-900 bg-gray-200 p-3;
+    }
+
+    .content-box__inner-box {
+        @apply p-5 font-bold;
+    }
+}
+
+.link-button {
+    @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded;
+}
