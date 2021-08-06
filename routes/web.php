@@ -13,21 +13,8 @@
 
 use Illuminate\Http\Request;
 
-Route::get('/user/{id}', function ($id) {
-    return view('login', ['id' => $id]);
-});
+Route::get('/user/{id}', 'UserController@index');
+Route::post('/user/{id}', 'UserController@post');
 
-Route::post('/user/{id}', function (Request $request, $id) {
-    $submit = $request->input('submit');
-    if($submit) {
-        return redirect('/register');
-    } else {
-        return redirect('/user/{id}')->with('id', $id);
-    }
-});
-
-Route::get('/register', function () {
-    return view('register');
-});
-
+Route::get('/register', 'RegisterController@index');
 Route::post('/register', 'RegisterController@post');
